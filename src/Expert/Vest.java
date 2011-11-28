@@ -12,10 +12,10 @@ public class Vest {
     public String nameShort;
     public String nameFull;
     public String specialType;
-    public int armorClass;
-    public float weightMin;
-    public float weightMax;
-    public float armorArea;
+    public String armorClass;
+    public double weightMin;
+    public double weightMax;
+    public double armorArea;
     public int yearDestr;
     public String matherial;
     public String url;
@@ -23,7 +23,7 @@ public class Vest {
     public String Description;
     public int approachFields;
 
-    public Vest(String nameS, String nameF, String specT, int armorC, float weightMin, float weightMax, float armorArea, int yearDestr, String matherial, String url, String image, String description) {
+    public Vest(String nameS, String nameF, String specT, String armorC, double weightMin, double weightMax, double armorArea, int yearDestr, String matherial, String url, String image, String description) {
         this.nameShort = nameS;
         this.nameFull = nameF;
         this.specialType = specT;

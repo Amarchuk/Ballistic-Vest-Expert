@@ -20,8 +20,8 @@ public class ExpertWindow {
     private JButton startTest;
     private JTextArea testResult;
     private JComboBox specialTypeBox;
-    private JComboBox matherialBox;
     private JComboBox defenceBox;
+    private JComboBox matherialBox;
     private JComboBox armorTypeBox;
     private JTextField weightMinVal;
     private JTextField weightMaxVal;
@@ -38,10 +38,10 @@ public class ExpertWindow {
     private JLabel Head;
     private JLabel Picture;
     private JComboBox showVast;
+    private JComboBox changeStyle;
     private JCheckBox checkStyle;
 
     public ExpertWindow() {
-        String[] allVests = {"...", "6Б2", "6Б3", "6Б4", "6Б5", "6Б11", "6Б15", "6Б17", "6Б19", "6Б20", "6Б21", "6Б23", "6Б24", "6Б25", "6Б43",};
 
         JFrame frame = new JFrame("Expert");
         frame.setPreferredSize(new Dimension(1100, 600));
@@ -54,9 +54,9 @@ public class ExpertWindow {
         //frame.setResizable(false);
 
 
-        Vest b2 = new Vest("6Б2", "imgs/6b2.jpg");
-        Vest b3 = new Vest("6Б3", "imgs/6b3.jpg");
-        Vest b4 = new Vest("6Б4", "imgs/6b4.jpg");
+        Vest b2 = new Vest("6Б2", "Общевойсковой бронежилет 6Б2 (Ж-81)", "общевойсковой", "2", 4.4, 4.8, 28, 1981, "титан", "http://www.russianarms.ru/forum/index.php/topic,1521.0.html", "imgs/6b2.jpg", "");
+        Vest b3 = new Vest("6Б3", "Общевойсковые бронежилеты 6Б3Т (Ж-85Т), 6Б3ТМ (Ж-85ТМ) и 6Б3Т-М-01 (Ж-85ТМ-01)", "общевойсковой", "3", 6.5, 12.1, 49.6, 1985, "титан", "http://www.russianarms.ru/forum/index.php/topic,1522.0.html", "imgs/6b3.jpg", "");
+        Vest b4 = new Vest("6Б4", "Общевойсковые бронежилеты серии 6Б4 (Ж-85К) и 6Б4-01 (Ж-85К-01)", "общевойсковой", "4", 7.6, 15.6, 49.6, 1985, "керамика", "http://www.russianarms.ru/forum/index.php/topic,2366.0.html", "imgs/6b4.jpg", "");
         Vest b5 = new Vest("6Б5", "imgs/6b5.jpg");
         Vest b11 = new Vest("6Б11", "imgs/6b11.jpg");
         Vest b15 = new Vest("6Б15", "imgs/6b15.jpg");
@@ -86,28 +86,43 @@ public class ExpertWindow {
         map.put(b25.nameShort, b25);
         map.put(b43.nameShort, b43);
 
-        checkStyle.addActionListener(new ActionListener() {
+        changeStyle.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (checkStyle.isSelected()) {
-                    Head.setText("Опознание");
-                    setPicture("imgs/startPage.jpg");
+                if (e.getActionCommand() == "comboBoxChanged") {
+                    if (changeStyle.getSelectedItem() == "Опознавание") {
+                        Head.setFont(new Font(null, Font.PLAIN, 28));
+                        Head.setText("Опознование");
+                        setPicture("imgs/startPage.jpg");
+                        startTest.setText("Начать опознование");
+
+                    }
+                    if (changeStyle.getSelectedItem() == "Обучение") {
+                        Vest request = (Vest) map.get(showVast.getSelectedItem());
+                        printVestAllInfo((Vest) map.get(request.nameShort));
+                    }
+                    if (changeStyle.getSelectedItem() == "Описание") {
+                        Head.setText("A3");
+
+                    }
+                    if (changeStyle.getSelectedItem() == "...") {
+                        Head.setFont(new Font(null, Font.PLAIN, 18));
+                        Head.setText("Экспертная система \"Бронежилеты\" 642 уч.вз. Марчук А.  ");
+                        setPicture("imgs/startPage.jpg");
+                    }
                 }
             }
         });
 
+
         startTest.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if (showVast.getSelectedItem() == "..." && checkStyle.isSelected()) {
-                    Test(map);
-                } else if (checkStyle.isSelected()){
-
+                if (showVast.getSelectedItem() == "..." && startTest.getText() == "Начать опознование") {
+                    Vest request = new Vest("", "", (String) specialTypeBox.getSelectedItem(), (String) armorTypeBox.getSelectedItem(), Double.valueOf(weightMinVal.getText()), Double.valueOf(weightMaxVal.getText()), Double.valueOf(armorAreaVal.getText()), Integer.valueOf(yearDestribVal.getText()), (String) matherialBox.getSelectedItem(), "", "", "");  //TODO
+                    Test(map, request);
+                } else if (startTest.getText() == "Начать опознование") {
                     Vest request = (Vest) map.get(showVast.getSelectedItem());
                     printVestInfo(request);
-                } else {
-                    Vest request = (Vest) map.get(showVast.getSelectedItem());
-                    printVestAllInfo(request);
                 }
-
             }
         });
 
@@ -154,12 +169,12 @@ public class ExpertWindow {
                 "Год принятия на вооружение: " + v.yearDestr + "\n" +
                 "URL: " + v.url + "\n");
 
-       // setPicture(v.image);
+        // setPicture(v.image);
 
     }
 
-    public void printVestAllInfo(Vest v){
-       HashMap nato = new HashMap();
+    public void printVestAllInfo(Vest v) {
+        HashMap nato = new HashMap();
         nato.put("1", "II");
         nato.put("2", "III-A");
         nato.put("3", "III-A");
@@ -171,30 +186,99 @@ public class ExpertWindow {
 
         HashMap def = new HashMap();
         def.put("1", "осколки");
-        def.put("2", "пистолет");
-        def.put("3", "пистолет");
-        def.put("4", "АК-74");
-        def.put("5", "АК-74");
-        def.put("5а", "АК-74");
+        def.put("2", "пистолет Токарева");
+        def.put("3", "пистолет Токарева");
+        def.put("4", "автомат АК-74");
+        def.put("5", "автомат АК-74");
+        def.put("5а", "автомат АК-74");
         def.put("6", "винтовка СВД");
         def.put("6а", "винтовка СВД");
 
-        //specialTypeBox.setSelectedItem(v.specialType);
-        //  matherialBox.setSelectedItem(v.matherial);
-        //defenceBox.setSelectedItem(def.get(v.armorClass));
-          //  armorTypeBox.setSelectedItem(v.armorClass);
-          weightMaxVal.setText(String.valueOf(v.weightMax));
-          weightMinVal.setText(String.valueOf(v.weightMin));
-          armorAreaVal.setText(String.valueOf(v.armorArea));
-          yearDestribVal.setText(String.valueOf(v.yearDestr));
-          setPicture(v.image);
-         // Head.setText(v.nameFull);
-          Head.setText(v.nameShort);
+        specialTypeBox.setSelectedItem(v.specialType);
+        defenceBox.setSelectedItem(v.matherial);
+        matherialBox.setSelectedItem(def.get(v.armorClass));
+        armorTypeBox.setSelectedItem(String.valueOf(v.armorClass));
+        weightMaxVal.setText(String.valueOf(v.weightMax));
+        weightMinVal.setText(String.valueOf(v.weightMin));
+        armorAreaVal.setText(String.valueOf(v.armorArea));
+        yearDestribVal.setText(String.valueOf(v.yearDestr));
+        // setPicture(v.image);
+        Head.setText(v.nameFull);
+        // Head.setText(v.nameShort);
     }
 
-    public void Test(HashMap<String, Vest> map){
+    public void Test(HashMap<String, Vest> map, Vest request) {
+
+        HashMap def = new HashMap();
+        def.put("1", "осколки");
+        def.put("2", "пистолет Токарева");
+        def.put("3", "пистолет Токарева");
+        def.put("4", "автомат АК-74");
+        def.put("5", "автомат АК-74");
+        def.put("5а", "автомат АК-74");
+        def.put("6", "винтовка СВД");
+        def.put("6а", "винтовка СВД");
+
+        String[] allVests = {"6Б2", "6Б3", "6Б4", "6Б5", "6Б11", "6Б15", "6Б17", "6Б19", "6Б20", "6Б21", "6Б23", "6Б24", "6Б25", "6Б43",};
+
+        testResult.setText("Результаты тестирования: \n");
+
+        for (String s : allVests) {
+            map.get(s).approachFields = 0;
+
+            if (map.get(s).specialType == "...") {
+                map.get(s).approachFields += 1;
+            } else {
+                if (map.get(s).specialType == request.specialType)
+                    map.get(s).approachFields += 1;
+            }
+
+            if (map.get(s).armorClass == "...") {
+                map.get(s).approachFields += 1;
+            } else {
+                if (map.get(s).armorClass == request.armorClass)
+                    map.get(s).approachFields += 1;
+            }
+
+            if (map.get(s).weightMin >= request.weightMin)
+                map.get(s).approachFields += 1;
+
+            if (map.get(s).weightMax <= request.weightMax)
+                map.get(s).approachFields += 1;
+
+            if (map.get(s).armorArea >= request.armorArea)
+                map.get(s).approachFields += 1;
+
+            if (map.get(s).yearDestr <= request.yearDestr)
+                map.get(s).approachFields += 1;
+
+            if (map.get(s).matherial == "...") {
+                map.get(s).approachFields += 1;
+            } else {
+                if (map.get(s).matherial == request.matherial)
+                    map.get(s).approachFields += 1;
+                // testResult.setText(testResult.getText()+map.get(s).matherial+ request.matherial+"\n");
+            }
+
+            if (def.get(map.get(s).armorClass) == def.get(request.armorClass)) {
+                map.get(s).approachFields += 1;
+            }
 
 
+            if (map.get(s).approachFields >= 6)
+                testResult.setText(testResult.getText() + "\nНаиболее вероятный: " + map.get(s).nameShort + ":" + String.valueOf(map.get(s).approachFields));
+            if (map.get(s).approachFields < 6 && map.get(s).approachFields > 4)
+                testResult.setText(testResult.getText() + "\nВероятный: " + map.get(s).nameShort + ":" + String.valueOf(map.get(s).approachFields));
+            if (map.get(s).approachFields <= 4 && map.get(s).approachFields >= 3)
+                testResult.setText(testResult.getText() + "\nНаименее вероятный: " + map.get(s).nameShort + ":" + String.valueOf(map.get(s).approachFields));
+
+        }
+
+
+    }
+
+    public static void main(String[] args) {
+        ExpertWindow w = new ExpertWindow();
     }
 
 }

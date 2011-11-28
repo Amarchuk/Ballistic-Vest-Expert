@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="Main" layout-manager="GridLayoutManager" row-count="7" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="1286" height="484"/>
+      <xy x="20" y="20" width="1386" height="484"/>
     </constraints>
     <properties>
       <toolTipText value="Ballistic Vest Expert"/>
@@ -36,17 +36,19 @@
         </constraints>
         <properties>
           <model>
+            <item value="..."/>
             <item value="общевойсковой"/>
             <item value="специальный"/>
           </model>
         </properties>
       </component>
-      <component id="152fa" class="javax.swing.JComboBox" binding="matherialBox">
+      <component id="152fa" class="javax.swing.JComboBox" binding="defenceBox">
         <constraints>
           <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
+            <item value="..."/>
             <item value="осколки"/>
             <item value="пистолет Токарева"/>
             <item value="автомат АК-74"/>
@@ -54,12 +56,13 @@
           </model>
         </properties>
       </component>
-      <component id="1e95f" class="javax.swing.JComboBox" binding="defenceBox">
+      <component id="1e95f" class="javax.swing.JComboBox" binding="matherialBox">
         <constraints>
           <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
+            <item value="..."/>
             <item value="ткань"/>
             <item value="титан"/>
             <item value="сталь"/>
@@ -73,6 +76,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="..."/>
             <item value="1"/>
             <item value="2"/>
             <item value="3"/>
@@ -216,10 +220,10 @@
           </grid>
         </constraints>
         <properties>
-          <font size="28"/>
+          <font size="18"/>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
-          <text value="Опознание"/>
+          <text value="Экспертная система &quot;Бронежилеты&quot; студент 642 уч. вз. Марчук А"/>
         </properties>
       </component>
       <component id="59b4d" class="javax.swing.JLabel" binding="Picture">
@@ -260,15 +264,20 @@
         </constraints>
         <properties>
           <foreground color="-13421569"/>
-          <text value="Запуск"/>
+          <text value=""/>
         </properties>
       </component>
-      <component id="3def1" class="javax.swing.JCheckBox" binding="checkStyle">
+      <component id="f3efe" class="javax.swing.JComboBox" binding="changeStyle">
         <constraints>
-          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Опознание"/>
+          <model>
+            <item value="..."/>
+            <item value="Опознавание"/>
+            <item value="Обучение"/>
+            <item value="Описание"/>
+          </model>
         </properties>
       </component>
     </children>
