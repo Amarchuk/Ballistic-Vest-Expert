@@ -57,17 +57,17 @@ public class ExpertWindow {
         Vest b2 = new Vest("6Б2", "Общевойсковой бронежилет 6Б2 (Ж-81)", "общевойсковой", "2", 4.4, 4.8, 28, 1981, "титан", "http://www.russianarms.ru/forum/index.php/topic,1521.0.html", "imgs/6b2.jpg", "");
         Vest b3 = new Vest("6Б3", "Общевойсковые бронежилеты 6Б3Т (Ж-85Т), 6Б3ТМ (Ж-85ТМ) и 6Б3Т-М-01 (Ж-85ТМ-01)", "общевойсковой", "3", 6.5, 12.1, 49.6, 1985, "титан", "http://www.russianarms.ru/forum/index.php/topic,1522.0.html", "imgs/6b3.jpg", "");
         Vest b4 = new Vest("6Б4", "Общевойсковые бронежилеты серии 6Б4 (Ж-85К) и 6Б4-01 (Ж-85К-01)", "общевойсковой", "4", 7.6, 15.6, 49.6, 1985, "керамика", "http://www.russianarms.ru/forum/index.php/topic,2366.0.html", "imgs/6b4.jpg", "");
-        Vest b5 = new Vest("6Б5", "imgs/6b5.jpg");
-        Vest b11 = new Vest("6Б11", "imgs/6b11.jpg");
-        Vest b15 = new Vest("6Б15", "imgs/6b15.jpg");
-        Vest b17 = new Vest("6Б17", "imgs/6b17.jpg");
-        Vest b19 = new Vest("6Б19", "imgs/6b19.jpg");
-        Vest b20 = new Vest("6Б20", "imgs/6b20.jpg");
-        Vest b21 = new Vest("6Б21", "imgs/6b21.jpg");
-        Vest b23 = new Vest("6Б23", "imgs/6b23.jpg");
-        Vest b24 = new Vest("6Б24", "imgs/6b24.jpg");
-        Vest b25 = new Vest("6Б25", "imgs/6b25.jpg");
-        Vest b43 = new Vest("6Б43", "imgs/6b43.jpg");
+        Vest b5 = new Vest("6Б5", "Общевойсковые бронежилеты 6Б5 (Ж-86) и 6Б5М серии \"Улей\"", "общевойсковой", "3", 2.7, 12.2, 49.6, 1986, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1523.0.html", "imgs/6b5.jpg", "Имеет 18 модификаций");
+        Vest b11 = new Vest("6Б11", "Общевойсковые бронежилеты 6Б11, 6Б12 и 6Б13 серии «Забрало»", "общевойсковой", "3", 4.2, 12.7, 50, 1999, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1527.0.html", "imgs/6b11.jpg", "");
+        Vest b15 = new Vest("6Б15", "Защитный комплект для экипажей бронированных машин 6Б15 «Ковбой»", "специальный", "1", 6.5, 6.5, 45, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1532.0.html", "imgs/6b15.jpg", "");
+        Vest b17 = new Vest("6Б17", "Бронежилеты специальные скрытного ношения 6Б17 и 6Б18","специальный", "1", 4.6, 5.0, 40, 2000, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1533.0.html", "imgs/6b15.jpg", "");
+        Vest b19 = new Vest("6Б19", "Бронежилет для наружных боевых постов кораблей и морской пехоты 6Б19", "специальный", "1", 2.8, 6.9, 28, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1534.0.html", "imgs/6b17.jpg", "Запас плавучести – от 3 до 6 кг");
+        Vest b20 = new Vest("6Б20", "6Б20 - бронежилет для боевых пловцов ВМФ", "специальный", "1", 1, 1, 20, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1535.0.html", "imgs/6b20.jpg", "");
+        Vest b21 = new Vest("6Б21", "Боевые защитные комплекты 6Б21 (6Б21-1, 6Б21-2) и 6Б22 (6Б22-1, 6Б22-2) \"Пермячка-О\"", "специальный", "3",  8.5, 11.0, 160, 2004, "керамика",  "http://www.russianarms.ru/forum/index.php/topic,1536.0.html", "imgs/6b21.jpg", "Имеет пламезащитные рукава и штаны");
+        Vest b23 = new Vest("6Б23", "Общевойсковой бронежилет 6Б23 (6Б23-1, 6Б23-2)","общевойсковой", "3",3.6, 10.2, 48, 2003, "сталь", "http://www.russianarms.ru/forum/index.php/topic,1537.0.html", "imgs/6b23.jpg", "");
+        Vest b24 = new Vest("6Б24", "Бронекомплект для старшего командного состава 6Б24 \"Земляника-О\"","специальный", "2", 4.5, 5.0, 45, 2001, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1538.0.html",   "imgs/6b24.jpg", "Есть летний и зимний варианты");
+        Vest b25 = new Vest("6Б25", "Защитный комплект для экипажей бронированных машин ракетных войск и артиллерии 6Б25","специальный", "1",6.5, 6.5, 45, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1532.0.html",  "imgs/6b25.jpg", "Содержит огнезащитный костюм, вариант развития 6Б15 «Ковбой»");
+        Vest b43 = new Vest("6Б43", "Общевойсковой штурмовой бронежилет 6Б43 \"Забрало-Ш\"", "общевойсковой", "6а", 4.5,15.0, 68, 2010, "керамика", "http://www.russianarms.ru/forum/index.php/topic,6684.0.html?PHPSESSID=k9f2n8bgvcaoe2b9o145c7abk6","imgs/6b43.jpg", "");
 
         final HashMap map = new HashMap();
 
@@ -97,17 +97,21 @@ public class ExpertWindow {
 
                     }
                     if (changeStyle.getSelectedItem() == "Обучение") {
-                        Vest request = (Vest) map.get(showVast.getSelectedItem());
-                        printVestAllInfo((Vest) map.get(request.nameShort));
+                        Head.setText("Обучение");
+                        setPicture("imgs/startPage.jpg");
+                        startTest.setText("Проверить ответ");
                     }
                     if (changeStyle.getSelectedItem() == "Описание") {
-                        Head.setText("A3");
-
+                        Head.setFont(new Font(null, Font.BOLD, 16));
+                        Head.setText("Описание");
+                        setPicture("imgs/startPage.jpg");
+                        startTest.setText("Показать параметры");
                     }
                     if (changeStyle.getSelectedItem() == "...") {
-                        Head.setFont(new Font(null, Font.PLAIN, 18));
+                        Head.setFont(new Font(null, Font.BOLD, 18));
                         Head.setText("Экспертная система \"Бронежилеты\" 642 уч.вз. Марчук А.  ");
                         setPicture("imgs/startPage.jpg");
+                        startTest.setText("");
                     }
                 }
             }
@@ -122,6 +126,13 @@ public class ExpertWindow {
                 } else if (startTest.getText() == "Начать опознование") {
                     Vest request = (Vest) map.get(showVast.getSelectedItem());
                     printVestInfo(request);
+                }
+
+                if (showVast.getSelectedItem() == "..." && startTest.getText() == "Показать параметры") {
+                   testResult.setText("Выберите бронежилет --->>>");
+                } else if (startTest.getText() == "Показать параметры") {
+                    Vest request = (Vest) map.get(showVast.getSelectedItem());
+                    printVestAllInfo(request);
                 }
             }
         });
@@ -202,9 +213,8 @@ public class ExpertWindow {
         weightMinVal.setText(String.valueOf(v.weightMin));
         armorAreaVal.setText(String.valueOf(v.armorArea));
         yearDestribVal.setText(String.valueOf(v.yearDestr));
-        // setPicture(v.image);
+        setPicture(v.image);
         Head.setText(v.nameFull);
-        // Head.setText(v.nameShort);
     }
 
     public void Test(HashMap<String, Vest> map, Vest request) {
@@ -274,6 +284,13 @@ public class ExpertWindow {
 
         }
 
+
+    }
+
+    public void setRandomQuestion(Vest v){
+         if(v.nameShort == ""){
+             Head.setText("Текст вопроса");
+         }
 
     }
 
