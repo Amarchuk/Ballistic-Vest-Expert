@@ -13,6 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+import java.util.Random;
 
 public class ExpertWindow {
     private JPanel Main;
@@ -86,6 +87,32 @@ public class ExpertWindow {
         map.put(b25.nameShort, b25);
         map.put(b43.nameShort, b43);
 
+        final String[] allVests = {"6Б2", "6Б3", "6Б4", "6Б5", "6Б11", "6Б15", "6Б17", "6Б19", "6Б20", "6Б21", "6Б23", "6Б24", "6Б25", "6Б43",};
+
+
+        final HashMap fields = new HashMap();
+
+
+        fields.put(0, "specialTypeBox");
+        fields.put(1, "defenceBox");
+        fields.put(2, "matherialBox");
+        fields.put(3, "armorTypeBox");
+        fields.put(4, "weightMaxVal");
+        fields.put(5, "weightMinVal");
+        fields.put(6, "armorAreaVal");
+        fields.put(7, "yearDestribVal");
+
+        final HashMap fieldsVest = new HashMap();
+
+        fieldsVest.put("specialTypeBox", "\"общевойсковой\" или \"специальный\"");
+        fieldsVest.put("defenceBox", "\"защита от\"");
+        fieldsVest.put("matherialBox", "материал");
+        fieldsVest.put( "armorTypeBox", "класс защиты");
+        fieldsVest.put( "weightMaxVal", "максимальный вес");
+        fieldsVest.put( "weightMinVal", "минимальный вес");
+        fieldsVest.put( "armorAreaVal", "площадь защиты (в дм2)");
+        fieldsVest.put( "yearDestribVal", "год принятия на вооружение");
+
         changeStyle.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (e.getActionCommand() == "comboBoxChanged") {
@@ -133,6 +160,21 @@ public class ExpertWindow {
                 } else if (startTest.getText() == "Показать параметры") {
                     Vest request = (Vest) map.get(showVast.getSelectedItem());
                     printVestAllInfo(request);
+                }
+
+                if (showVast.getSelectedItem() == "..." && startTest.getText() == "Проверить ответ") {
+
+                    Random i = new Random();
+                    Head.setFont(new Font(null, Font.BOLD, 16));
+                    Head.setText("Введите "+fieldsVest.get(fields.get(i.nextInt(8))) + " у бронежилета "+allVests[i.nextInt(14)]+".");
+
+                } else if (startTest.getText() == "Проверить ответ") {
+                    Random i = new Random();
+                    Head.setFont(new Font(null, Font.BOLD, 16));
+                    Vest request = (Vest) map.get(showVast.getSelectedItem());
+                    Head.setText("Введите "+fieldsVest.get(fields.get(i.nextInt(8))) + " у бронежилета "+request.nameShort +".");
+
+
                 }
             }
         });
