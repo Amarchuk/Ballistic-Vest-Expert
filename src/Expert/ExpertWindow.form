@@ -165,7 +165,7 @@
         <properties>
           <horizontalAlignment value="0"/>
           <horizontalTextPosition value="0"/>
-          <text value="Год принятия на вооружение, до "/>
+          <text value="Год принятия на вооружение"/>
         </properties>
       </component>
       <component id="19e62" class="javax.swing.JTextField" binding="armorAreaVal">

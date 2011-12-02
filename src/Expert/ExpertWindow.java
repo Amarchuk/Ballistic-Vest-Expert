@@ -15,6 +15,10 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.TreeMap;
+import java.awt.*;
+import java.net.*;
+import java.applet.*;
+import java.awt.event.*;
 
 public class ExpertWindow {
     private JPanel Main;
@@ -163,6 +167,13 @@ public class ExpertWindow {
             }
         });
 
+        Documents.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent eee) {
+
+                //TODO new JFrame and dispaly documents
+                //AppletContext.showDocuments(new URL ("imgs/6b43.jpg"));
+            }
+        });
 
         startTest.addActionListener(new ActionListener() {
             Random i = new Random();
@@ -285,12 +296,12 @@ public class ExpertWindow {
         }
 
 
-        if (armorAreaVal.getText() != null) {
+        if (!armorAreaVal.getText().isEmpty()) {
             armorAreaValV = Double.valueOf(armorAreaVal.getText());
             requestNumber+=1;
         }
 
-        if (yearDestribVal.getText() != null){
+        if (!yearDestribVal.getText().isEmpty()){
            yearDestribValV =Integer.valueOf(yearDestribVal.getText());
            requestNumber+=1;
         }
@@ -443,22 +454,24 @@ public class ExpertWindow {
             }
 
 
-            if (map.get(s).approachFields >= 6) {
+            if (map.get(s).approachFields >= requestNumber*(6/8)) {
                 result.put(map.get(s).approachFields, "Наиболее вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
             }
             //testResult.setText(testResult.getText() + "\nНаиболее вероятный: " + map.get(s).nameShort + ":" + " совпадений "+String.valueOf(map.get(s).approachFields));
-            if (map.get(s).approachFields < 6 && map.get(s).approachFields > 4) {
+            if (map.get(s).approachFields < requestNumber*(6/8) && map.get(s).approachFields > requestNumber*0.5) {
                 result.put(map.get(s).approachFields, "Вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
 
             }
             // testResult.setText(testResult.getText() + "\nВероятный: " + map.get(s).nameShort + ":" + " совпадений "+ String.valueOf(map.get(s).approachFields));
-            if (map.get(s).approachFields <= 4 && map.get(s).approachFields >= 3) {
+            if (map.get(s).approachFields <= requestNumber*0.5 && map.get(s).approachFields >= requestNumber*(3/8)) {
                 result.put(map.get(s).approachFields, "Наименее вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
 
             }
             //testResult.setText(testResult.getText() + "\nНаименее вероятный: " + map.get(s).nameShort + ":" + " совпадений "+ String.valueOf(map.get(s).approachFields));
             i += 1;
         }
+
+       // testResult.setText(testResult.getText() + " Всего выбрано полей: " + requestNumber+ "\n");
 
         TreeMap sortedResult = new TreeMap(result);
         for (Object j : sortedResult.keySet()) {
