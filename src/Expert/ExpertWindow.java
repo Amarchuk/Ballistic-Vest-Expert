@@ -15,10 +15,6 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.TreeMap;
-import java.awt.*;
-import java.net.*;
-import java.applet.*;
-import java.awt.event.*;
 
 public class ExpertWindow {
     private JPanel Main;
@@ -169,9 +165,21 @@ public class ExpertWindow {
 
         Documents.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent eee) {
+                try {
+                    String sys = System.getProperty("os.name");
+                    if (sys.startsWith("Windows")) {
+                        Runtime runtime = Runtime.getRuntime();
+                        Process process0 = runtime.exec(new String[]{"explorer", "./documents"});
 
-                //TODO new JFrame and dispaly documents
-                //AppletContext.showDocuments(new URL ("imgs/6b43.jpg"));
+                    } else {
+
+                        Runtime runtime = Runtime.getRuntime();
+                        Process process0 = runtime.exec(new String[]{"nautilus", "./documents"});
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -274,44 +282,44 @@ public class ExpertWindow {
 
         if (specialTypeBox.getSelectedItem() != null) {
             specialTypeBoxV = (String) specialTypeBox.getSelectedItem();
-            requestNumber+=1;
+            requestNumber += 1;
         }
 
-        if ( armorTypeBox.getSelectedItem() != null) {
+        if (armorTypeBox.getSelectedItem() != null) {
             armorTypeBoxV = (String) armorTypeBox.getSelectedItem();
-            requestNumber+=1;
-            if(defenceBox.getSelectedItem() != null){
-                 defenceBoxV = (String)defenceBox.getSelectedItem();
+            requestNumber += 1;
+            if (defenceBox.getSelectedItem() != null) {
+                defenceBoxV = (String) defenceBox.getSelectedItem();
             }
         }
 
-        if (weightMinVal.getText() != null){
-           weightMinValV = Double.valueOf(weightMinVal.getText());
-            requestNumber+=1;
+        if (weightMinVal.getText() != null) {
+            weightMinValV = Double.valueOf(weightMinVal.getText());
+            requestNumber += 1;
         }
 
-        if (weightMaxVal.getText() != null){
-           weightMaxValV = Double.valueOf(weightMaxVal.getText());
-            requestNumber+=1;
+        if (weightMaxVal.getText() != null) {
+            weightMaxValV = Double.valueOf(weightMaxVal.getText());
+            requestNumber += 1;
         }
 
 
         if (!armorAreaVal.getText().isEmpty()) {
             armorAreaValV = Double.valueOf(armorAreaVal.getText());
-            requestNumber+=1;
+            requestNumber += 1;
         }
 
-        if (!yearDestribVal.getText().isEmpty()){
-           yearDestribValV =Integer.valueOf(yearDestribVal.getText());
-           requestNumber+=1;
+        if (!yearDestribVal.getText().isEmpty()) {
+            yearDestribValV = Integer.valueOf(yearDestribVal.getText());
+            requestNumber += 1;
         }
 
         if (matherialBox.getSelectedItem() != null) {
             matherialBoxV = (String) matherialBox.getSelectedItem();
-            requestNumber+=1;
+            requestNumber += 1;
         }
 
-        return new Vest(defenceBoxV, "", specialTypeBoxV , armorTypeBoxV , weightMinValV, weightMaxValV , armorAreaValV, yearDestribValV, matherialBoxV, "", "", "");  //TODO
+        return new Vest(defenceBoxV, "", specialTypeBoxV, armorTypeBoxV, weightMinValV, weightMaxValV, armorAreaValV, yearDestribValV, matherialBoxV, "", "", "");  //TODO
     }
 
     public void setPicture(String path) {
@@ -351,7 +359,6 @@ public class ExpertWindow {
                 "Год принятия на вооружение: " + v.yearDestr + "\n" +
                 "URL: " + v.url + "\n");
 
-        // setPicture(v.image);
 
     }
 
@@ -389,11 +396,6 @@ public class ExpertWindow {
     }
 
     public void Test(HashMap<String, Vest> map, Vest request) {
-
-
-        //TODO убрать эксепшены и сделать вероятные при любом количестве введенных и норматиыные документы приделать
-
-        //
 
         HashMap def = new HashMap();
         def.put("1", "осколки");
@@ -449,21 +451,21 @@ public class ExpertWindow {
                 // testResult.setText(testResult.getText()+map.get(s).matherial+ request.matherial+"\n");
             }
 
-            if (def.get(map.get(s).armorClass) == def.get(request.armorClass) || def.get(map.get(s).armorClass) == request.nameShort ) {
+            if (def.get(map.get(s).armorClass) == def.get(request.armorClass) || def.get(map.get(s).armorClass) == request.nameShort) {
                 map.get(s).approachFields += 1;
             }
 
 
-            if (map.get(s).approachFields >= requestNumber*(6/8)) {
+            if (map.get(s).approachFields >= requestNumber * (6 / 8)) {
                 result.put(map.get(s).approachFields, "Наиболее вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
             }
             //testResult.setText(testResult.getText() + "\nНаиболее вероятный: " + map.get(s).nameShort + ":" + " совпадений "+String.valueOf(map.get(s).approachFields));
-            if (map.get(s).approachFields < requestNumber*(6/8) && map.get(s).approachFields > requestNumber*0.5) {
+            if (map.get(s).approachFields < requestNumber * (6 / 8) && map.get(s).approachFields > requestNumber * 0.5) {
                 result.put(map.get(s).approachFields, "Вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
 
             }
             // testResult.setText(testResult.getText() + "\nВероятный: " + map.get(s).nameShort + ":" + " совпадений "+ String.valueOf(map.get(s).approachFields));
-            if (map.get(s).approachFields <= requestNumber*0.5 && map.get(s).approachFields >= requestNumber*(3/8)) {
+            if (map.get(s).approachFields <= requestNumber * 0.5 && map.get(s).approachFields >= requestNumber * (3 / 8)) {
                 result.put(map.get(s).approachFields, "Наименее вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
 
             }
@@ -471,7 +473,7 @@ public class ExpertWindow {
             i += 1;
         }
 
-       // testResult.setText(testResult.getText() + " Всего выбрано полей: " + requestNumber+ "\n");
+        // testResult.setText(testResult.getText() + " Всего выбрано полей: " + requestNumber+ "\n");
 
         TreeMap sortedResult = new TreeMap(result);
         for (Object j : sortedResult.keySet()) {
