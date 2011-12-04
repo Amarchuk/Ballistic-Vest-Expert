@@ -17,6 +17,8 @@ import java.util.Random;
 import java.util.TreeMap;
 
 public class ExpertWindow {
+    //public String imgpath = getClass().getResource("/src/imgs/6b2.jpg").toString();
+
     private JPanel Main;
     private JButton Documents;
     private JButton startTest;
@@ -49,38 +51,38 @@ public class ExpertWindow {
         JFrame frame = new JFrame("Expert");
         frame.setPreferredSize(new Dimension(1100, 600));
         frame.setLocation(100, 150);
-        this.setPicture("imgs/startPage.jpg");
+        this.setPicture("src/imgs/startPage.jpg");
         frame.setContentPane(this.getForm());
         frame.pack();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //frame.setResizable(false);
 
-
-        Vest b2 = new Vest("6Б2", "Общевойсковой бронежилет 6Б2 (Ж-81)", "общевойсковой", "2", 4.4, 4.8, 28, 1981, "титан", "http://www.russianarms.ru/forum/index.php/topic,1521.0.html", "imgs/6b2.jpg", "");
+       // System.out.println(getClass().getResource("/imgs/6b2.jpg").toString());
+        Vest b2 = new Vest("6Б2", "Общевойсковой бронежилет 6Б2 (Ж-81)", "общевойсковой", "2", 4.4, 4.8, 28, 1981, "титан", "http://www.russianarms.ru/forum/index.php/topic,1521.0.html", "src/imgs/6b2.jpg", "");
         Vest b3 = new Vest("6Б3", "Общевойсковые бронежилеты 6Б3Т \n" +
-                "(Ж-85Т), 6Б3ТМ (Ж-85ТМ) \n ", "общевойсковой", "3", 6.5, 12.1, 49.6, 1985, "титан", "http://www.russianarms.ru/forum/index.php/topic,1522.0.html", "imgs/6b3.jpg", "");
+                "(Ж-85Т), 6Б3ТМ (Ж-85ТМ) \n ", "общевойсковой", "3", 6.5, 12.1, 49.6, 1985, "титан", "http://www.russianarms.ru/forum/index.php/topic,1522.0.html", "src/imgs/6b3.jpg", "");
         Vest b4 = new Vest("6Б4", "Общевойсковые бронежилеты серии 6Б4\n" +
-                "(Ж-85К) и 6Б4-01 \n(Ж-85К-01)", "общевойсковой", "4", 7.6, 15.6, 49.6, 1985, "керамика", "http://www.russianarms.ru/forum/index.php/topic,2366.0.html", "imgs/6b4.jpg", "");
+                "(Ж-85К) и 6Б4-01 \n(Ж-85К-01)", "общевойсковой", "4", 7.6, 15.6, 49.6, 1985, "керамика", "http://www.russianarms.ru/forum/index.php/topic,2366.0.html", "src/imgs/6b4.jpg", "");
         Vest b5 = new Vest("6Б5", "Общевойсковые бронежилеты 6Б5 (Ж-86)\n" +
-                " и 6Б5М серии \"Улей\"", "общевойсковой", "3", 2.7, 12.2, 49.6, 1986, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1523.0.html", "imgs/6b5.jpg", "Имеет 18 модификаций");
+                " и 6Б5М серии \"Улей\"", "общевойсковой", "3", 2.7, 12.2, 49.6, 1986, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1523.0.html", "src/imgs/6b5.jpg", "Имеет 18 модификаций");
         Vest b11 = new Vest("6Б11", "Общевойсковые бронежилеты 6Б11, \n" +
-                "6Б12 и 6Б13 серии «Забрало»", "общевойсковой", "3", 4.2, 12.7, 50, 1999, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1527.0.html", "imgs/6b11.jpg", "");
+                "6Б12 и 6Б13 серии «Забрало»", "общевойсковой", "3", 4.2, 12.7, 50, 1999, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1527.0.html", "src/imgs/6b11.jpg", "");
         Vest b15 = new Vest("6Б15", "Защитный комплект для экипажей \n" +
-                "бронированных машин 6Б15 «Ковбой»", "специальный", "1", 6.5, 6.5, 45, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1532.0.html", "imgs/6b15.jpg", "");
+                "бронированных машин 6Б15 «Ковбой»", "специальный", "1", 6.5, 6.5, 45, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1532.0.html", "src/imgs/6b15.jpg", "");
         Vest b17 = new Vest("6Б17", "Бронежилеты специальные скрытного \n" +
-                "ношения 6Б17 и 6Б18", "специальный", "1", 4.6, 5.0, 40, 2000, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1533.0.html", "imgs/6b15.jpg", "");
+                "ношения 6Б17 и 6Б18", "специальный", "1", 4.6, 5.0, 40, 2000, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1533.0.html", "src/imgs/6b15.jpg", "");
         Vest b19 = new Vest("6Б19", "Бронежилет для наружных боевых постов\n" +
-                "кораблей и морской пехоты 6Б19", "специальный", "1", 2.8, 6.9, 28, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1534.0.html", "imgs/6b17.jpg", "Запас плавучести – от 3 до 6 кг");
-        Vest b20 = new Vest("6Б20", "6Б20 - бронежилет для боевых пловцов ВМФ", "специальный", "1", 2.5, 4.3, 32, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1535.0.html", "imgs/6b20.jpg", "");
-        Vest b21 = new Vest("6Б21", "Боевые защитные комплекты 6Б21 и 6Б22 \"Пермячка-О\"", "специальный", "3", 8.5, 11.0, 160, 2004, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1536.0.html", "imgs/6b21.jpg", "Имеет пламезащитные рукава и штаны");
+                "кораблей и морской пехоты 6Б19", "специальный", "1", 2.8, 6.9, 28, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1534.0.html", "src/imgs/6b17.jpg", "Запас плавучести – от 3 до 6 кг");
+        Vest b20 = new Vest("6Б20", "6Б20 - бронежилет для боевых пловцов ВМФ", "специальный", "1", 2.5, 4.3, 32, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1535.0.html", "src/imgs/6b20.jpg", "");
+        Vest b21 = new Vest("6Б21", "Боевые защитные комплекты 6Б21 и 6Б22 \"Пермячка-О\"", "специальный", "3", 8.5, 11.0, 160, 2004, "керамика", "http://www.russianarms.ru/forum/index.php/topic,1536.0.html", "src/imgs/6b21.jpg", "Имеет пламезащитные рукава и штаны");
         Vest b23 = new Vest("6Б23", "Общевойсковой бронежилет 6Б23 \n" +
-                "(6Б23-1, 6Б23-2)", "общевойсковой", "3", 3.6, 10.2, 48, 2003, "сталь", "http://www.russianarms.ru/forum/index.php/topic,1537.0.html", "imgs/6b23.jpg", "");
+                "(6Б23-1, 6Б23-2)", "общевойсковой", "3", 3.6, 10.2, 48, 2003, "сталь", "http://www.russianarms.ru/forum/index.php/topic,1537.0.html", "src/imgs/6b23.jpg", "");
         Vest b24 = new Vest("6Б24", "Бронекомплект для старшего командного\n" +
-                "состава 6Б24 \"Земляника-О\"", "специальный", "2", 4.5, 5.0, 45, 2001, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1538.0.html", "imgs/6b24.jpg", "Есть летний и зимний варианты");
-        Vest b25 = new Vest("6Б25", "Защитный комплект для экипажей БМ ракетных войск и артиллерии 6Б25", "специальный", "1", 6.5, 6.5, 45, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1532.0.html", "imgs/6b25.jpg", "Содержит огнезащитный костюм, вариант развития 6Б15 «Ковбой»");
+                "состава 6Б24 \"Земляника-О\"", "специальный", "2", 4.5, 5.0, 45, 2001, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1538.0.html", "src/imgs/6b24.jpg", "Есть летний и зимний варианты");
+        Vest b25 = new Vest("6Б25", "Защитный комплект для экипажей БМ ракетных войск и артиллерии 6Б25", "специальный", "1", 6.5, 6.5, 45, 2003, "ткань", "http://www.russianarms.ru/forum/index.php/topic,1532.0.html", "src/imgs/6b25.jpg", "Содержит огнезащитный костюм, вариант развития 6Б15 «Ковбой»");
         Vest b43 = new Vest("6Б43", "Общевойсковой штурмовой бронежилет \n" +
-                "6Б43 \"Забрало-Ш\"", "общевойсковой", "6а", 4.5, 15.0, 68, 2010, "керамика", "http://www.russianarms.ru/forum/index.php/topic,6684.0.html?PHPSESSID=k9f2n8bgvcaoe2b9o145c7abk6", "imgs/6b43.jpg", "");
+                "6Б43 \"Забрало-Ш\"", "общевойсковой", "6а", 4.5, 15.0, 68, 2010, "керамика", "http://www.russianarms.ru/forum/index.php/topic,6684.0.html?PHPSESSID=k9f2n8bgvcaoe2b9o145c7abk6", "src/imgs/6b43.jpg", "");
 
         final HashMap map = new HashMap();
 
@@ -132,14 +134,14 @@ public class ExpertWindow {
                         Head.setFont(new Font(null, Font.PLAIN, 28));
                         testResult.setText("Введите параметры тестирования или выберите бронежилет \n для получения справки");
                         Head.setText("Опознавание");
-                        setPicture("imgs/startPage.jpg");
+                        setPicture("src/imgs/startPage.jpg");
                         startTest.setText("Начать опознавание");
                         clearFields();
                     }
                     if (changeStyle.getSelectedItem() == "Обучение") {
                         Head.setText("Обучение");
                         testResult.setText("Нажмите для получения вопроса -->>>");
-                        setPicture("imgs/startPage.jpg");
+                        setPicture("src/imgs/startPage.jpg");
                         startTest.setText("Получить вопрос");
                         clearFields();
                     }
@@ -147,7 +149,7 @@ public class ExpertWindow {
                         Head.setFont(new Font(null, Font.BOLD, 16));
                         testResult.setText("Выберите бронежилет -->>>");
                         Head.setText("Описание");
-                        setPicture("imgs/startPage.jpg");
+                        setPicture("src/imgs/startPage.jpg");
                         startTest.setText("Показать параметры");
                         clearFields();
                     }
@@ -155,7 +157,7 @@ public class ExpertWindow {
                         Head.setFont(new Font(null, Font.BOLD, 18));
                         testResult.setText("Выберите режим (правый верхний угол)");
                         Head.setText("Экспертная система \"Бронежилеты\" 642 уч.вз. Марчук А.  ");
-                        setPicture("imgs/startPage.jpg");
+                        setPicture("src/imgs/startPage.jpg");
                         startTest.setText("");
                         clearFields();
                     }
@@ -456,24 +458,19 @@ public class ExpertWindow {
             }
 
 
-            if (map.get(s).approachFields >= requestNumber * (6 / 8)) {
-                result.put(map.get(s).approachFields, "Наиболее вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
+            if (map.get(s).approachFields >= requestNumber * 0.75) {
+                result.put(map.get(s).approachFields, "Наиболее вероятный: " + map.get(s).nameShort);// + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
             }
-            //testResult.setText(testResult.getText() + "\nНаиболее вероятный: " + map.get(s).nameShort + ":" + " совпадений "+String.valueOf(map.get(s).approachFields));
-            if (map.get(s).approachFields < requestNumber * (6 / 8) && map.get(s).approachFields > requestNumber * 0.5) {
-                result.put(map.get(s).approachFields, "Вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
+            if (map.get(s).approachFields < requestNumber * 0.75 && map.get(s).approachFields > requestNumber * 0.5) {
+                result.put(map.get(s).approachFields, "Вероятный: " + map.get(s).nameShort);// + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
 
             }
-            // testResult.setText(testResult.getText() + "\nВероятный: " + map.get(s).nameShort + ":" + " совпадений "+ String.valueOf(map.get(s).approachFields));
-            if (map.get(s).approachFields <= requestNumber * 0.5 && map.get(s).approachFields >= requestNumber * (3 / 8)) {
-                result.put(map.get(s).approachFields, "Наименее вероятный: " + map.get(s).nameShort + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
+            if (map.get(s).approachFields <= requestNumber * 0.5 && map.get(s).approachFields >= requestNumber * 0.25) {
+                result.put(map.get(s).approachFields, "Наименее вероятный: " + map.get(s).nameShort);// + ":" + " совпадений " + String.valueOf(map.get(s).approachFields));
 
             }
-            //testResult.setText(testResult.getText() + "\nНаименее вероятный: " + map.get(s).nameShort + ":" + " совпадений "+ String.valueOf(map.get(s).approachFields));
             i += 1;
         }
-
-        // testResult.setText(testResult.getText() + " Всего выбрано полей: " + requestNumber+ "\n");
 
         TreeMap sortedResult = new TreeMap(result);
         for (Object j : sortedResult.keySet()) {
