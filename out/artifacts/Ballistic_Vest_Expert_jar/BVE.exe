@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar /home/amarch/Documents/Voenka/Expert/Ballistic-Vest-Expert/out/artifacts/Ballistic_Vest_Expert_jar/Ballistic_Vest_Expert.jar
